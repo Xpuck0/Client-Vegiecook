@@ -1,0 +1,242 @@
+@import url(https://db.onlinewebfonts.com/c/4aedb9283857944b5870ed258b2904e6?family=Handelson+W00+Three);
+
+.header {
+    font-family: Roboto, sans-serif;
+    height: 90px;
+    font-weight: 500;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-top: .25em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    gap: 1.7em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    flex: 0 1 15%;
+    height: 3.5em;
+    width: auto;
+    display: flex;
+    align-items: center;
+    font-size: 46px;
+    font-family: "Handelson W00 Three", serif;
+    text-transform: capitalize;
+}
+
+.logo span {
+    font-size: 46px;
+}
+
+.vegie {
+    color: var(--main-green-color)
+}
+
+.header .nav {
+    flex: 0 1 20%;
+}
+
+.header .img {
+    height: 100%;
+    width: auto;
+}
+
+.header .ul {
+    display: flex;
+    gap: 1em;
+}
+
+.header .ul li {
+    list-style-type: none;
+    font-size: .8em;
+    font-weight: 350;
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    transition: border-color .25s;
+}
+
+.header a:hover {
+    border-bottom-color: black;
+}
+
+.header .query {
+    flex: 1 0 25%;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .8em;
+    outline: unset;
+    padding: .4em 1.1em;
+    border-radius: 0em;
+    transition: border-color .25s;
+    box-shadow: 0 2px 8px 1px rgba(64, 60, 67, .24);
+    border-radius: 8px;
+}
+
+.query:hover,
+.query:focus {
+    border-color: var(--main-green-color)
+}
+
+.header .buttonWrapper {
+    flex: 0 1 10%;
+    display: flex;
+    gap: .5em;
+}
+
+
+.buttonWrapper > * {
+    background-color: var(--main-green-color);
+    color: white;
+    border-color: transparent;
+    padding: .35em .75em;
+    font-size: .8em;
+    border-radius: .1em;
+    will-change: filter;
+    transition: filter .25s;
+    transition: all .2s;
+    letter-spacing: normal;
+    padding-inline: 1.5em;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px 1px rgba(64, 60, 67, .24);
+    border-radius: 8px;
+
+}
+
+.buttonWrapper > *:hover {
+    background-color: var(--dark-green-color);
+    filter: drop-shadow(0 0 0 .5em var(--dark-green-color));
+    border-color: var(--dark-green-color);
+    transform: scale(1.1);
+}
+
+.signin {
+    background-color: rgb(120, 209, 212);
+}
+
+.signin:hover {
+
+    border-color: #348073;
+    background-color: #348073;
+}
+
+.horizontalBreak {
+    height: 40%;
+    width: 3px;
+    background-color: var(--light-gray);
+    border-radius: 20%;
+}
+
+.father {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    display: flex;
+    text-align: right;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 22px;
+    padding: .5em;
+    width: 7em;
+    right: 0;
+    position: absolute;
+    top: 2em;
+
+    border: 2px solid #E8E9EE;
+
+    z-index: 5;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px 1px rgba(64, 60, 67, .24);
+}
+
+.dropdown:hover {
+    box-shadow: 0 2px 9px 2px rgba(64,60,67,.24);
+}
+
+.dropdown li { 
+    font-size: 18px;
+    white-space: nowrap;
+    list-style-type: none;
+    padding-right: .5em;
+    border-radius: 4px;
+}
+
+.dropdown li:hover {
+    background-color: #F3F3F3;
+}
+
+.dropdown a {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.profile {
+    font-weight: 400;
+}
+
+.heading {
+    font-size: 22px;
+    font-weight: 380;
+    width: 7em;
+    color: #555555;
+    border-bottom: 2px solid #E8E9EE;
+    overflow: hidden;
+
+    text-overflow:ellipsis;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 6px;
+    box-shadow: 0 4px 2px -3px rgba(64,60,67,.24);
+    transition: background-color .2s, color .2s, box-shadow .2s;
+}
+
+.selected,
+.heading:hover {
+    /* background-color: #28b830d3; */
+    background-color: #fbfbfc;;
+    /* color: white; */
+    box-shadow: 0 4px 4px -3px rgba(64,60,67,.24);
+}
+
+
+.profile:hover {
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+} 
+
+.show {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    gap: .6em;
+}
+
+
+.verticalBreak {
+    height: 2px;
+    width: 6em;
+    background-color: var(--light-gray);
+    border-radius: 20%;
+}
+

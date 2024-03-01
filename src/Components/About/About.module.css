@@ -1,0 +1,84 @@
+@import url('https://fonts.cdnfonts.com/css/urw-geometric');
+@import url(https://db.onlinewebfonts.com/c/4aedb9283857944b5870ed258b2904e6?family=Handelson+W00+Three); 
+
+
+.aboutwrapper {
+    margin-block: 5em 7em;
+    display: flex;
+    height: fit-content;
+    background-color: #e8efe1;
+    position: relative;
+}
+
+.imgContainer {
+    flex: 0 0 43%;
+    overflow: hidden;
+}
+
+
+.imgContainer img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.textContainer {
+    flex: 1 1 55%;
+    padding: 85px 65px;
+    text-align: start;
+    font-size: 22px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.textContainer h2 {
+    font-family: 'URW Geometric', sans-serif;
+    /* font-family: Roboto, sans-serif; */
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.textContainer h3 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.textContainer span {
+    font-family: "Handelson W00 Three"; 
+    font-size: 1.6em;
+}
+
+.textContainer a {
+    color: #6c933e;
+    border-bottom: 2px solid #6c933e;
+    width: fit-content;
+}
+
+.textContainer a:hover {
+    color: #2d5022;
+    border-bottom-color: #2d5022;
+}
+
+
+.svgContainer > img {
+    height: 150px;
+    width: auto;
+    position: absolute;
+    z-index: 3;
+}
+
+.svgContainer img:nth-child(1) {
+    top:-4em;
+    right: 2em;
+    transform: rotate(10deg);
+
+}
+
+.svgContainer img:nth-child(2) {
+    bottom: -3em;
+    left: -3em;
+    transform: rotate(-50deg);
+}

@@ -1,0 +1,45 @@
+.recipeCard {
+    flex: 1 0 20%;
+    display: block;
+    width: 300px;
+}
+
+.imageContainer {
+    display: block;
+    overflow: hidden;
+    max-width: 100%;
+    height: 360px;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    transition: transform .2s;
+}
+
+.imageContainer img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.category {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #777;
+    width: fit-content;
+    margin: 1em auto;
+}
+
+.category a {
+    color: #777;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: black;
+    text-wrap: wrap;
+}

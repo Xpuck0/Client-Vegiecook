@@ -1,0 +1,86 @@
+.footerWrapper {
+    height: 90px;
+    margin-bottom: 0px;
+}
+
+.footer {
+    margin-top: 120px;
+    padding-block: 3em;
+    display: block;
+    width: 100vw;
+    position: relative;
+    background-color: #510e3e;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2.5em;
+}
+
+
+.footer li {
+    list-style-type: none;
+}
+
+.footer a,
+.footer .copyright {
+    color: white;
+    text-decoration: none;
+}
+
+.footer .navigation {
+    display: flex;
+    gap: 3em;
+    margin: 0 auto;
+    /* text-align: center; */
+    width: fit-content;
+}
+
+.footer .navigation a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer .info {
+    display: flex;
+    gap: 3em;
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 14px;
+}
+
+.line {
+    height: 1px;
+    width: 300px;
+    margin: 1em auto 1em;
+    background-color: whitesmoke;
+
+}
+
+.copyright {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.fruits>* {
+    position: absolute;
+}
+
+.avocado {
+    height: 200px;
+    top: -4em;
+    left: 10em;
+    transform: rotate(20deg)
+}
+
+.carrot {
+    top: -6em;
+    height: 250px;
+    right: 2em;
+    transform: rotate(-10deg);
+}
+
+.olive {
+    top: 1em;
+    height: 200px;
+    right: 15em;
+    transform: rotate(40deg)
+}

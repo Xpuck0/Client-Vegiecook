@@ -1,0 +1,335 @@
+
+.pageWrapper {
+    min-height: 100vh;
+}
+
+.page {
+    width: 1200px;
+    margin: 0 auto;
+    /* position: absolute; */
+    /* min-height: 100vh; */
+}
+
+.page h2,
+.page h1 {
+    color: #3d3d3d;
+}
+
+.recipe {
+    width: 900px;
+    /* min-height: 100vh; */
+    background-color: #FAF5E7;
+    text-align: left;
+    border-style: solid;
+    border-width: 0;
+    border-color: #faf5e7;
+    border-radius: 0;
+    font-size: 22px;
+    padding: 40px 50px;
+}
+
+.heading {
+    display: flex;
+}
+
+.ratingCont{
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    color:#3d3d3d;
+    gap: 2em;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.textHeading {
+    flex: 0 0 65%;
+    text-transform: capitalize;
+}
+
+.author {
+    margin-block: .5em;
+}
+
+.author a {
+    font-size: 20px;
+    color: palevioletred;
+    text-transform: capitalize;
+
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-block: 1em 1em;
+}
+
+.iconContOne {
+    display: inline;
+    position: absolute;
+    background: url('../../assets/print.svg');
+    background-size: contain;
+    width: 100%;
+    height: 20px;
+    left: .9em;
+    background-repeat: no-repeat;
+}
+
+.iconContTwo {
+    background: url('../../assets/bookmark.svg');
+    display: inline;
+    position: absolute;
+    background-size: contain;
+    width: 100%;
+    height: 20px;
+    left: .9em;
+    background-repeat: no-repeat;
+}
+
+.print,
+.save {
+    position: relative;
+    display: inline-block;
+    color: #f28320;
+    background-color: unset;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 1.52px;
+    text-transform: uppercase;
+    border: 1px solid #f28320;
+    padding: 9px 20px 6px 43px
+}
+
+.imageHeader {
+    flex: 0 0 35%;
+    /* height: 300px; */
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+}
+
+.imageHeader img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.courseList {
+    display: flex;
+    flex-direction: column;
+}
+
+.courseList .value::after {
+    content: ',';
+}
+
+.courseList .value:last-child::after {
+    content: '';
+}
+
+.value {
+    display: inline;
+    gap: 1em;
+}
+
+.timeCont,
+.recipeMeta {
+    font-size: 16px;
+    margin-top: 2em;
+    display: flex;
+    gap: 2em;
+}
+
+.li {
+    flex: 0 0 33%;
+    list-style-type: none;
+    border-left: 1px solid black;
+    padding-left: 1em;
+}
+
+.li .heading {
+    text-transform: capitalize;
+}
+
+.ingredientsHeading,
+.instructionsHeading {
+    margin-top: 1em;
+    font-family: Roboto;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.ingredient {
+    list-style-type: none;
+    display: flex;
+    gap: .5em;
+}
+
+.instructions {
+    counter-reset: step-counter;
+    margin-bottom: 2.5em;
+}
+
+.checkbox {
+    background-color: #f28320;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1em;
+    height: 1em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.1em;
+    transform: translateY(.11em);
+}
+
+
+.instruction {
+    /* list-style-type: decimal; */
+    position: relative;
+    list-style-type: none;
+    margin-left: 40px;
+    /* list-style-position: outside; */
+}
+
+.checkbox:checked {
+    accent-color: #f28320;
+    color: white;
+}
+
+.instructions li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: -40px;
+    top: 4px;
+    background-color: #f28320;
+    color: #ffffff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.categories {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    font-size: 20px;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.categories li {
+    list-style-type: none;
+    text-transform: uppercase;
+    background-color: #fbf5e5;
+    /* margin-bottom: .7em; */
+}
+
+.categories li a {
+    /* letter-spacing: 2px; */
+    color: #1d1d1d;
+    font-family: Roboto;
+    letter-spacing: 1.52px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* height: 2.5em; */
+    padding: .5em 1em;
+}
+
+.commentCreate {
+    width: 900px;
+    text-align: left;
+    font-size: 22px;
+    background-color: #FAF5E7;
+    padding: 40px 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 4em;
+}
+
+
+.commentCreate h2 {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.commentWrite {
+    height: 360px;
+    resize: vertical;
+    font-size: .8em;
+    padding: .8em 1em;
+    border: 1px solid #FAF5E7;
+    min-height: 1.3em;
+    outline: none;
+    transition: border .2s;
+}
+
+.commentWrite:hover,
+.commentWrite:focus {
+    /* outline: none; */
+    border: 1px solid #ffd665;
+}
+
+.post {
+
+    width: fit-content;
+    padding: .3em .6em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Roboto;
+    font-size: .9em;
+    font-weight: 500;
+    background-color: #f28320;
+    color: white;
+}
+
+.post[disabled] {
+    opacity: .5;
+    cursor:not-allowed;
+}
+
+.commentsInfo {
+    text-align: left;
+    margin-block: 1em;
+    width: 900px;
+    font-size: 40px;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column-reverse; 
+    gap: 1.3em;
+    margin-bottom: 18em;
+}
+
+
+.comments li {
+    list-style-type: none;
+}
+
+.error {
+    font-size: 18px;
+    color: rgb(150, 35, 0)
+}
+
+.loading {
+    min-height: 100vh;
+
+}

@@ -1,0 +1,10 @@
+.main {
+    min-height: 100vh;
+    display: block;
+}
+
+.recent {
+    display: flex;
+    gap: 1.2em;
+    justify-content: space-between;
+}

@@ -1,0 +1,62 @@
+@import url(https://db.onlinewebfonts.com/c/4aedb9283857944b5870ed258b2904e6?family=Handelson+W00+Three);
+
+
+.wrapper {
+    background-color: #FBF5E5;
+    position: relative;
+    padding: 35px 55px 35px 200px;
+    margin-block: 3em 5em;
+}
+
+.fancy {
+    display: inline;
+    color: #000;
+    text-align: center;
+    font-family: "Handelson W00 Three", serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.huge {
+    font-size: 27px;
+    font-style:  oblique;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.signup {
+    font-family: Roboto, sans-serif;
+    background-color: #F28320;
+    margin-top: 1em;
+    padding: .5em 1em;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: background-color .25s,
+                border .25s,
+                transform .2s;
+}
+
+.signup:hover {
+    background-color: #d3006c;
+    border-color: #d3006c;
+    transform: scale(1.1)
+}
+
+.broccoli {
+    position: absolute;
+    bottom: -1.2em;
+    left: 4em;
+    transform:rotate(-55deg);
+    height: 120px;
+    width: auto;
+    transition: transform .2s;
+}
+
+.broccoli:hover {
+    transform: scale(1.05) rotate(-70deg);
+}

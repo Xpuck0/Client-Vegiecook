@@ -1,0 +1,89 @@
+.wrapper {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #ffd5fb;
+}
+
+.form {
+    width: 500px;
+    font-size: 22px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.form label {
+    font-weight: 500;
+    color: #393939;
+    padding-bottom: .2em;
+}
+
+.form input {
+    width: 100%;
+    padding: .2em .4em;
+}
+
+.form textarea {
+    width: 100%;
+    resize: vertical;
+    outline: none;;
+    border: unset;
+    height: 360px;
+    font-size: 20px;
+    padding: .2em .4em;
+}
+
+.sectionTitle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sectionDescription {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.buttons button {
+    width: 8em;
+    padding: .3em .8em;
+}
+
+.submitButton {
+    background-color: rgb(220, 253, 170);
+    border: 1px solid rgb(220, 253, 170);
+    transition: transform .2s;
+}
+
+.submitButton:hover {
+    transform: scale(1.05);
+}
+
+.backButton {
+    background-color: #ffc0b7;
+    border: 1px solid #ffc0b7;
+    transition: transform .2s;
+}
+
+.backButton:hover {
+    transform: scale(1.05);
+}
+
+.error {
+    color: rgb(172, 48, 48);
+    margin-block: -1em;
+    font-size: 18px;
+}

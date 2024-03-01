@@ -1,0 +1,88 @@
+.wrapper {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.sectionCourse {
+    background-color: #fcffd2;
+    padding-block: 1em;
+}
+
+.sectionDiet {
+    background-color: #ddfcce;
+    padding-block: 1em;
+}
+
+.prepTime {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #e1f9ff;
+    padding: 1em;
+}
+
+.cookTime {
+    display: flex;
+    background-color: #f6e1ff;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+.input {
+    width: 3em;
+}
+
+.hours,
+.minutes {
+    display: flex;
+    justify-content: space-between;
+    width: 7em;
+    margin: 0 auto;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.buttons button {
+    width: 8em;
+    padding: .3em .8em;
+}
+
+.submitButton {
+    background-color: rgb(220, 253, 170);
+    border: 1px solid rgb(220, 253, 170);
+    transition: transform .2s;
+}
+
+.submitButton:hover {
+    /* border: 1px solid rgb(180, 255, 68); */
+    transform: scale(1.05);
+}
+
+.backButton {
+    background-color: #ffc0b7;
+    border: 1px solid #ffc0b7;
+    transition: transform .2s;
+}
+
+.backButton:hover {
+    /* border: 1px solid #ff6d57; */
+    transform: scale(1.05);
+}
+
+.error {
+    color: rgb(172, 48, 48);
+    margin-block: -1em;
+    font-size: 18px;
+}

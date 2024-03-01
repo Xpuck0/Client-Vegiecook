@@ -1,0 +1,122 @@
+.loginModal {
+    position: fixed; /* Positioning relative to the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the modal */
+    z-index: 100; /* Ensure it sits above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+    border-radius: 8px; /* Optional: Rounds the corners */
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 50; /* Below the modal but above other content */
+}
+
+.login {
+    padding-block: 2em;
+    background-color: #E8EFE1;
+    font-size: 1em;
+    width: 800px;
+    text-align: left;
+    position: relative;
+    border: 2px solid #E6E6E6;
+}
+
+.wrapper {
+    padding-left: 3em;
+}
+
+.title {
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: .5em;
+}
+
+.inputContainer {
+    display: flex;
+    margin-bottom: .7em;
+}
+
+.input {
+    flex: 1 1 60%;
+    display: flex;
+    background-color: transparent;
+    border: unset;
+    border-bottom: 1px solid #AEAEAE;
+    font-size: .9em;
+
+}
+
+.input:focus {
+    outline: none
+}
+
+.charLength {
+    flex: 1 1 30%;
+    text-align: center;
+}
+
+.submit {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    padding: .5em 2em;
+    margin: 1em auto 0;
+    color: white;
+    background-color: #24592B;
+}
+
+.loginButton {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  margin: 1em auto 0;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; 
+}
+
+.loginButton:hover {
+  background-color: #45a049; 
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.24), 0 0 3px 0 rgba(0,0,0,0.19); 
+  transform: scale(0.95); 
+}
+
+
+.valid {
+    color: #1CCA00;
+}
+
+.invalid {
+    color: #FF6868;
+}
+
+.close {
+    height: 40px;
+    width: auto;
+    position: absolute;
+    right: .5em;
+    top: .5em;
+    transition: all .2s;
+} 
+
+.close:hover {
+    cursor: pointer;
+    fill: #213212; 
+    transform: scale(0.9);
+}
+
+.wrong {
+    color: darkred;
+    font-size: 16px;
+}

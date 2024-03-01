@@ -1,0 +1,121 @@
+.wrapper {
+    margin: 0 auto;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    font-size: 20px;
+}
+
+.wrapper label {
+    color: #404040;
+}
+
+.input {
+    color: #404040;
+    padding: .2em .5em;
+}
+
+.ingredients {
+    background-color: #d6ffce;
+    padding: 1.5em 2em 2em;
+}
+
+.addButton {
+    background-color: darkgreen;
+    color: #eee;
+}
+
+.addButton:hover {
+    background-color: darkolivegreen;
+}
+
+.ingrWrapper {
+    display: flex;
+    gap: 1em;
+}
+
+.name,
+.quantity {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredients .name {
+    /* flex: 0 0 65%; */
+    width: 60%;
+}
+
+.instructions .name {
+    width: 100%;
+}
+
+.quantity {
+    /* flex: 0 0 15%; */
+    width: 30%;
+}
+
+.addButton {
+    flex: 1 0 10%;
+}
+
+.instructions {
+    background-color: rgb(255, 207, 206);
+    padding: 1.5em 2em 2em;
+}
+
+.instrWrapper {
+    display: flex;
+    gap: 1em;
+}
+
+.instrWrapper .addButton {
+    flex: 0 0 10%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.buttons button {
+    width: 8em;
+    padding: .3em .8em;
+}
+
+.submitButton {
+    background-color: rgb(220, 253, 170);
+    border: 1px solid rgb(220, 253, 170);
+    transition: transform .2s;
+}
+
+.submitButton:hover {
+    /* border: 1px solid rgb(180, 255, 68); */
+    transform: scale(1.05);
+}
+
+.backButton {
+    background-color: #ffc0b7;
+    border: 1px solid #ffc0b7;
+    transition: transform .2s;
+}
+
+.backButton:hover {
+    /* border: 1px solid #ff6d57; */
+    transform: scale(1.05);
+}
+
+.ingredientList,
+.instructionList {
+    padding: 1em;
+    text-align: left;
+}
+
+.err {
+    color: darkred;
+    font-size: .9em;
+}
