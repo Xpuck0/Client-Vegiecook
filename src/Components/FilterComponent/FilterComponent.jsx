@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./FilterComponent.module.css";
 import CategorySelect from "./CategorySelect/CategorySelect";
 import DietSelect from "./DietSelect/DietSelect";
 
 
-export default function FilterComponent() {
-    const [diets, setDiets] = useState([]);
-    const [categories, setCategories] = useState([]);
+export default function FilterComponent({
+    diets,
+    setDiets,
+    categories,
+    setCategories
+}) {
 
     const searchHandler = (e) => {
         e.preventDefault();
@@ -23,6 +26,7 @@ export default function FilterComponent() {
                     categories={categories}
                     setCategories={setCategories}
                 />
+                {console.log(categories)}
             </div>
             <div className={style.recipeFilter}>
                 <h2>By Diet</h2>
@@ -30,6 +34,7 @@ export default function FilterComponent() {
                     diets={diets}
                     setDiets={setDiets}
                 />
+                {console.log(diets)}
             </div>
         </div>
     )

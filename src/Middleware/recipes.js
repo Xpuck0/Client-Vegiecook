@@ -1,13 +1,15 @@
-import { calcMinutes, formatTime } from "../utils/time";
-import getCookie from '../utils/getCookie';
-import { getCourse } from "./courses";
+// import { calcMinutes, formatTime } from "../utils/time";
+// import getCookie from '../utils/getCookie';
+
+import { calcMinutes } from "../utils/time";
+
+// import { getCourse } from "./courses";
 const baseUrl = 'http://localhost:8000/recipes'
 
 export async function getAllRecipes() {
     try {
         const response = await fetch(baseUrl);
         if (!response.ok) {
-            // const errorData = await response.json()
             throw new Error("Failed to fetch all recipes.")
         }
 
@@ -17,6 +19,36 @@ export async function getAllRecipes() {
         return { success: false, error: error.message }
     }
 }
+
+export async function getRecipesByDiet(id) {
+    try {
+        const response = await fetch(`${baseUrl}/?diet=${id}`)
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch all recipes.")
+        }
+        const data = await response.json();
+        return { success: true, data: data }
+    } catch (error) {
+        return { success: false, error: error.message }
+    }
+}
+
+export async function getRecipesByCategory(id) {
+    try {
+        const response = await fetch(`${baseUrl}/?categories=${id}`)
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch all recipes.")
+        }
+        const data = await response.json();
+        return { success: true, data: data }
+    } catch (error) {
+        return { success: false, error: error.message }
+    }
+}
+
+
 
 export async function getRecipe(id) {
     try {
@@ -36,7 +68,7 @@ export async function getRecipe(id) {
 
 export async function patchRecipe(id, recipeData) {
     try {
-        const response = await fetch(`${baseUrl}/${id}/`, {
+        const response = await fetch(`${baseUrl}/${id}`, {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",

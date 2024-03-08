@@ -7,6 +7,7 @@ import { CircularProgress, Rating } from '@mui/material';
 import { postComment } from '../../Middleware/comments';
 import AuthContext from '../../contexts/AuthProvider';
 import { convertTimeToDuration, convertSecondsToDuration } from '../../utils/time';
+import Path from '../../paths';
 
 const RECIPE_PARAMS = {
     id: null,
@@ -82,15 +83,21 @@ export default function RecipeDetailPage() {
             }));
             setComment('');
             setCommentRating(0);
+
+            if (commentRating && commentRating != 0) {
+                console.log(recipeData.rating)
+                const update = await patchRecipe(recipeData.id, {
+                    votes: recipeData.votes + 1,
+                    rating: parseFloat(((Number(recipeData.votes) * Number(recipeData.rating) + Number(commentRating)) / (recipeData.votes + 1)).toFixed(1))
+                })
+                if (update.success) {
+                    console.log(update.data)
+                } else {
+                    console.log(response.error);
+                }
+            }
         } else {
             console.log(response.error);
-        }
-
-        if (commentRating) {
-            const update = await patchRecipe(recipeData.id, {
-                votes: recipeData.votes + 1,
-                rating: (recipeData.votes * recipeData.rating + commentRating) / (recipeData.votes + 1)
-            })
         }
     };
 
@@ -134,7 +141,7 @@ export default function RecipeDetailPage() {
                             <div className={style.ratingCont}>
                                 {/* TODO STARS */}
                                 <Rating
-                                    defaultValue={recipeData.rating}
+                                    defaultValue={Number(recipeData.rating) || 0} // Convert to number and use 0 as fallback
                                     value={commentRating}
                                     // readOnly
                                     onChange={(event, newValue) => {
@@ -181,7 +188,11 @@ export default function RecipeDetailPage() {
                         </li>
                         <li className={style.li}>
                             <span className={style.heading}>diet</span>
-                            <span className={style.value}>{recipeData.diet ? recipeData.diet.name : 'Loading diet information...'}</span>
+                            {recipeData.diet ? (
+                                <Link to={`${Path.Diet}/${recipeData.diet.id}`}><span className={style.value}>{recipeData.diet.name}</span></Link>
+                            ) : (
+                                <span className={style.value}>Loading diet information...</span>
+                            )}
                         </li>
                         <li className={style.li}>
                             <span className={style.heading}>serving size</span>
@@ -213,7 +224,7 @@ export default function RecipeDetailPage() {
                 <div className={style.categoriesCont}>
                     <ul className={style.categories}>
                         {recipeData.categories.map((cat) => (
-                            <li key={cat.id}><Link to={`/categories/${cat.id}`}>{cat.name}</Link></li>
+                            <li key={cat.id}><Link to={`${Path.Category}/${cat.id}`}>{cat.name}</Link></li>
                         ))}
                     </ul>
                 </div>
@@ -235,8 +246,8 @@ export default function RecipeDetailPage() {
                 <section className={style.commentsWrapper}>
                     <h2 className={style.commentsInfo}>{recipeData.comments.length} comment on {recipeData.title}</h2>
                     <ul className={style.comments}>
-                        {recipeData.comments.length > 0 && recipeData.comments.map(r => (
-                            <li key={r.id}>{<CommentNode c={r} />}</li>
+                        {recipeData.comments.length > 0 && recipeData.comments.map((r, i) => (
+                            <li key={`${r.id}-${i}`}>{<CommentNode c={r} />}</li>
                         ))}
                     </ul>
                 </section>

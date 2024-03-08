@@ -1,0 +1,26 @@
+.wrapper {
+    text-align: left;
+    font-size: 22px;
+    background-color: #f7f7f7;
+    line-height: 26px;
+    margin: 30px 0;
+    padding: 26px 30px;
+    border-left-style: solid;
+    border-left-width: 4px;
+    border-color: #f0533a;
+}
+
+.header {
+    color: #f0533a;
+    font-family: Roboto;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.description {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}

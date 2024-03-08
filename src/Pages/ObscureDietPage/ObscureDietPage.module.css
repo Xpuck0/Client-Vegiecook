@@ -1,0 +1,50 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+.wrapper h1 {
+    font-size: 50px;;
+    margin-bottom: 1.2em;
+}
+
+.sectionWrapper  {
+   max-width: 1000px;
+   margin: 2em auto;
+   display: flex; 
+   flex-direction: column;
+   gap: 2em;
+   margin-bottom: 4em;
+}
+
+.section {
+    padding: 3em;
+    max-width: 700px;
+    border-radius: 50%;
+    background-color: rgb(243, 255, 240);
+}
+
+.section:nth-child(2) {
+    background-color: rgb(255, 240, 254);
+}
+
+.section:nth-child(3) {
+    background-color: rgb(255, 248, 240);
+}
+.section:nth-child(4) {
+    background-color: rgb(240, 240, 255);
+}
+.section:nth-child(5) {
+    background-color: rgb(255, 240, 240);
+}
+.section:nth-child(6) {
+    background-color: rgb(255, 240, 251);
+}
+.section h2 {
+    margin-bottom: 1em;
+}
+
+.section:nth-child(even) {
+    margin-left: auto;
+}

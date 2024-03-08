@@ -7,10 +7,12 @@ import ThirdStage from '../../Components/Stages/ThirdStage/ThirdStage';
 import { createRecipe } from '../../Middleware/recipes';
 import FourthStage from '../../Components/Stages/FourthStage/FourthStage';
 import { getAllCourses } from '../../Middleware/courses';
+import { useNavigate } from 'react-router-dom';
+import Path from '../../paths';
 
 
 export default function CreateRecipe() {
-    const { setShowFirstStage, showFirstStage, showSecondStage, showThirdStage, showFourthStage } = useContext(CreateRecipeContext)
+    const { setShowFirstStage, setShowSecondStage, showFirstStage, setShowThirdStage, showSecondStage, setShowFourthStage, showThirdStage, showFourthStage } = useContext(CreateRecipeContext)
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
@@ -30,25 +32,18 @@ export default function CreateRecipe() {
 
     const [image, setImage] = useState({ preview: '', data: '' });
 
+    const nav = useNavigate();
+
     useEffect(() => {
         setShowFirstStage(true);
+
+        setShowSecondStage(false);
+        setShowThirdStage(false);
+        setShowFourthStage(false);
     }, [])
 
     const onSubmit = async (e) => {
         e.preventDefault();
-
-        // console.log('title: ' , title);
-        // console.log('description: ' , description)
-        console.log('course: ' , course)
-        // console.log('diet' , diet)
-        // console.log('categories: ' , categories)
-        // console.log('prephours: ' , prepHours)
-        // console.log('prepminutes :' , prepMinutes)
-        // console.log('cookhours: ' , cookHours)
-        // console.log('cokminutes: ' , cookMinutes)
-        // console.log('image: :' , image)
-        // console.log('ingredients: ' , ingredients)
-        // console.log('instructions: ' , instructions);
 
         const res = await createRecipe(
             title,
@@ -65,6 +60,8 @@ export default function CreateRecipe() {
             instructions,
             servingSize
         )
+        
+        nav(`${Path.Recipes}/${res.id}`)
     }
 
     return (

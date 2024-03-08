@@ -7,11 +7,13 @@ import { logout, register } from '../../Middleware/auth'
 import { useContext, useState, useEffect } from 'react';
 import AuthContext from '../../contexts/AuthProvider';
 import Path from '../../paths';
+import { QueryContext } from '../../contexts/QueryContext';
 
 
-export default function Header() {
+export default function Header({disabled=true}) {
     const { isLoginVisible, isRegisterVisible, toggleLoginVisible, toggleRegisterVisible } = useAuthVisible();
     const { username, isAuthenticated, setAuth } = useContext(AuthContext);
+    const {query, setQuery} = useContext(QueryContext);
     const [hide, setHide] = useState(true)
 
 
@@ -57,7 +59,7 @@ export default function Header() {
                     </ul>
                 </nav>
 
-                <input className={style.query} type="text" placeholder="Search..." />
+                <input className={style.query} type="text" placeholder="Search..." value={query} onChange={e => setQuery(e.target.value)} />
                 {!isAuthenticated ?
                     <div className={style.buttonWrapper}>
                         <button onClick={toggleLoginVisible} className={style.login}>Log in</button>

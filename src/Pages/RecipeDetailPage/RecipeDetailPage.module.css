@@ -37,8 +37,9 @@
     align-items: center;
     /* flex-direction: column; */
     color:#3d3d3d;
+    font-weight: 600;
     gap: 2em;
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
@@ -46,6 +47,10 @@
 .textHeading {
     flex: 0 0 65%;
     text-transform: capitalize;
+}
+
+.textHeading h1 {
+    word-break: break-word;
 }
 
 .author {

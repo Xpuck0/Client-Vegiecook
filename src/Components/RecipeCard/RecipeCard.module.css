@@ -1,7 +1,8 @@
 .recipeCard {
     flex: 1 0 20%;
     display: block;
-    width: 300px;
+    max-width: 300px;
+    padding-bottom: 1em;
 }
 
 .imageContainer {

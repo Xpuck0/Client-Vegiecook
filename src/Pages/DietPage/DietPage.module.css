@@ -1,0 +1,28 @@
+.wrapper {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    /* transform: translateY(50%) */
+}
+
+.header {
+    margin-bottom: 1em;
+    text-align: center;
+    color: #252522;
+}
+
+.description {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style:italic;
+    color: #353535;
+    font-size: 26px;
+    text-align: left;
+    margin-block: 1em;
+}
+
+
+.count {
+    margin-block: 2em;
+    font-size: 26px;
+    text-align: left;
+}

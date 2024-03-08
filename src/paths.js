@@ -1,7 +1,10 @@
 const Path = {
     Home: '/',
     Recipes: '/recipes',
-    CreateRecipe: '/create'
+    CreateRecipe: '/create',
+    Diet: '/diets',
+    Category: '/categories',
+    
 
 }
 
