@@ -4,7 +4,7 @@ const Path = {
     CreateRecipe: '/create',
     Diet: '/diets',
     Category: '/categories',
-    
+    Leaderboards: '/leaderboards', 
 
 }
 

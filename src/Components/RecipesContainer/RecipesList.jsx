@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import { QueryContext } from '../../contexts/QueryContext';
 import RecipeCard from '../RecipeCard/RecipeCard';
 
-export default function RecipesList({recipes=[]}){
+export default function RecipesList({recipes=[], rating=false}){
     const {query} = useContext(QueryContext);
 
     const filterRecipes = (recipe) => {
@@ -24,7 +24,7 @@ export default function RecipesList({recipes=[]}){
         <div className={style.recipesContainer}>
             <ul className={style.ul}>
                 {recipes.filter(filterRecipes).map((r, i) => (
-                    <li key={`${r.title}-${r.id}`}><RecipeCard r={r} /></li>
+                    <li key={`${r.title}-${r.id}`}><RecipeCard r={r} rating={rating}/></li>
                 ))}
             </ul>
         </div>

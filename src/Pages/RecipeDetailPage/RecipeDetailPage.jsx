@@ -92,6 +92,11 @@ export default function RecipeDetailPage() {
                 })
                 if (update.success) {
                     console.log(update.data)
+                    setRecipeData(prevState => ({
+                        ...prevState,
+                        rating: update.data.rating,
+                        votes: update.data.votes
+                    }));
                 } else {
                     console.log(response.error);
                 }

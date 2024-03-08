@@ -20,6 +20,20 @@ export async function getAllRecipes() {
     }
 }
 
+export async function getSortedRecipes() {
+    try {
+        const response = await fetch(baseUrl + '/sorted');
+        if (!response.ok) {
+            throw new Error("Failed to fetch all recipes.")
+        }
+
+        const data = await response.json();
+        return { success: true, data: data }
+    } catch (error) {
+        return { success: false, error: error.message }
+    }
+}
+
 export async function getRecipesByDiet(id) {
     try {
         const response = await fetch(`${baseUrl}/?diet=${id}`)

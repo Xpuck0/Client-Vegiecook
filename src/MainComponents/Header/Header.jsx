@@ -68,7 +68,7 @@ export default function Header({disabled=true}) {
 
                     : isAuthenticated && (
                         <>
-                            <div className={style.horizontalBreak}></div>
+                            {/* <div className={style.horizontalBreak}></div> */}
                             <div className={style.profile}>
                                 <ul className={style.father}>
                                     <li onClick={toggleDropdown} className={`${style.heading} ${!hide && style.selected}`}>{username}</li>

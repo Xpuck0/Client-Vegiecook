@@ -21,6 +21,7 @@ import DietPage from './Pages/DietPage/DietPage';
 import CategoryPage from './Pages/CategoryPage/CategoryPage';
 import ObscureCategoryPage from './Pages/ObscureCategoryPage/ObscureCategoryPage';
 import ObscureDietPage from './Pages/ObscureDietPage/ObscureDietPage';
+import LeaderboardsPage from './Pages/LeaderboardsPage/LeaderboardsPage';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
                                 <Route path={`${Path.Diet}/:id`} element={<DietPage />} />
                                 <Route path={Path.Category} element={<ObscureCategoryPage />} />
                                 <Route path={`${Path.Category}/:id`} element={<CategoryPage />} />
+                                <Route path={Path.Leaderboards} element={<LeaderboardsPage />} />
                             </Routes>
                         </Suspense>
                         <Footer />

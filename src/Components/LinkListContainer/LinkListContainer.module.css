@@ -12,7 +12,7 @@
     gap: 2em;
 }
 
-li {
+.ul > li {
     list-style: none;
     width: fit-content;
 }
