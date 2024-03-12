@@ -1,0 +1,80 @@
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 22px;
+    text-align: left;
+    position: relative;
+}
+
+.card { 
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 auto;;
+}
+
+.card h3 {
+    text-transform: uppercase;
+}
+
+.time {
+    font-size: 0.85em;
+    margin-bottom: .6em;
+}
+
+.link {
+    margin-top: .6em;
+    font-family: Roboto;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.1px;
+    color: rgb(158, 53, 123);
+}
+
+.img {
+    position: absolute;
+    top: -1em;
+    right: -1em;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.likeCont {
+    display: flex;
+    align-items: center;
+
+    border: 2px solid grey;
+    width: fit-content;
+    border-radius: .4em;
+}
+
+.likeCont > * {
+    padding: .15em .6em;
+    font-size: 18px;
+}
+
+.likesCnt {
+    padding-top: 8px;
+    border-left: 2px solid grey;
+}
+
+.heart {
+    display: flex;
+    align-items: center;
+}
+
+.hrtCnt {
+    height: 50px;
+    object-fit: scale-down;
+    object-position: center;
+    overflow: hidden;
+    transform: scale(1.2); /* Adjust 0.5 to whatever scale suits your needs */
+    transform-origin: center;
+}
+
+
+.word {
+    padding-top: 4px;
+    margin-left: .6em;
+}

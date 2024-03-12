@@ -42,6 +42,7 @@ export default function LinkListcontainer({
 
     return (
         <div className={style.wrapper}>
+            <h4 className={style.title}><Link to={type == 'category' ? Path.Category : Path.Diet}>{type == 'category' ? 'Categories' : 'Diets'}</Link></h4>
             <ul className={style.ul}>
                 {list.map((el, i) => (
                     <li key={el.id + '-' + i}><Link className={style.link} to={type == 'category' ? `${Path.Category}/${el.id}` : `${Path.Diet}/${el.id}`}>{el.name}</Link></li>

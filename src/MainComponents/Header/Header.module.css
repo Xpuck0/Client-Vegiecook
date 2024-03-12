@@ -84,6 +84,7 @@
     transition: border-color .25s;
     box-shadow: 0 2px 8px 1px rgba(64, 60, 67, .24);
     border-radius: 8px;
+    transition: all 0.3s ease; /* Adjust as needed */
 }
 
 .query:hover,
@@ -235,3 +236,11 @@
     border-radius: 20%;
 }
 
+.input-focused, .query:focus {
+    border-color: var(--main-green-color) !important;
+    position:fixed;
+    width: 600px;
+    margin: 0 auto;
+    transform: translateX(50%);
+    z-index: 10;
+}

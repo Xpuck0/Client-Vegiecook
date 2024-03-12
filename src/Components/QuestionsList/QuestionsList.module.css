@@ -1,0 +1,14 @@
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.list li {
+    list-style-type: none;
+}

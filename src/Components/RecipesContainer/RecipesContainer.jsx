@@ -4,10 +4,17 @@ import style from './RecipesContainer.module.css';
 import { getAllRecipes } from "../../Middleware/recipes";
 import { QueryContext } from "../../contexts/QueryContext";
 import { FidgetSpinner } from "react-loader-spinner";
+import { useScroll } from "../../contexts/ScrollContext";
 
 export default function RecipesContainer({ recipes_, diets = [], categories = [] }) {
     const [recipes, setRecipes] = useState(recipes_ || []);
     const { query } = useContext(QueryContext)
+    const { recipesSectionRef } = useScroll();
+
+    useEffect(() => {
+        console.log(recipesSectionRef.current);
+    }, [recipesSectionRef.current]);
+
 
     useEffect(() => {
         (!recipes_ || !recipes_.length) && (async () => {
@@ -44,7 +51,7 @@ export default function RecipesContainer({ recipes_, diets = [], categories = []
 
 
     return (
-        <div className={style.recipesContainer}>
+        <div className={style.recipesContainer} ref={recipesSectionRef}>
             <ul className={style.ul}>
                 {recipes.filter(filterRecipes).map((r, i) => (
                     <li key={`${r.title}-${r.id}`}><RecipeCard r={r} /></li>

@@ -22,33 +22,38 @@ import CategoryPage from './Pages/CategoryPage/CategoryPage';
 import ObscureCategoryPage from './Pages/ObscureCategoryPage/ObscureCategoryPage';
 import ObscureDietPage from './Pages/ObscureDietPage/ObscureDietPage';
 import LeaderboardsPage from './Pages/LeaderboardsPage/LeaderboardsPage';
+import { ScrollProvider } from './contexts/ScrollContext';
+import ForumPage from './Pages/ForumPage/ForumPage';
 
 function App() {
 
     return (
-        <AuthProvider>
-            <LoginVisibleProvider>
-                <CreateRecipeProvider>
-                    <QueryContextProvider>
-                        <Header />
-                        <Suspense fallback={<CircularProgress />}>
-                            <Routes>
-                                <Route path={Path.Home} element={<HomePage />} />
-                                <Route path={Path.Recipes} element={<AllRecipesPage />} />
-                                <Route path={`${Path.Recipes}/:id`} element={<RecipeDetailPage />} />
-                                <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
-                                <Route path={Path.Diet} element={<ObscureDietPage />} />
-                                <Route path={`${Path.Diet}/:id`} element={<DietPage />} />
-                                <Route path={Path.Category} element={<ObscureCategoryPage />} />
-                                <Route path={`${Path.Category}/:id`} element={<CategoryPage />} />
-                                <Route path={Path.Leaderboards} element={<LeaderboardsPage />} />
-                            </Routes>
-                        </Suspense>
-                        <Footer />
-                    </QueryContextProvider>
-                </CreateRecipeProvider>
-            </LoginVisibleProvider>
-        </AuthProvider>
+        <ScrollProvider>
+            <AuthProvider>
+                <LoginVisibleProvider>
+                    <CreateRecipeProvider>
+                        <QueryContextProvider>
+                            <Header />
+                            <Suspense fallback={<CircularProgress />}>
+                                <Routes>
+                                    <Route path={Path.Home} element={<HomePage />} />
+                                    <Route path={Path.Recipes} element={<AllRecipesPage />} />
+                                    <Route path={`${Path.Recipes}/:id`} element={<RecipeDetailPage />} />
+                                    <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
+                                    <Route path={Path.Diet} element={<ObscureDietPage />} />
+                                    <Route path={`${Path.Diet}/:id`} element={<DietPage />} />
+                                    <Route path={Path.Category} element={<ObscureCategoryPage />} />
+                                    <Route path={`${Path.Category}/:id`} element={<CategoryPage />} />
+                                    <Route path={Path.Leaderboards} element={<LeaderboardsPage />} />
+                                    <Route path={Path.Forum} element={<ForumPage />} />
+                                </Routes>
+                            </Suspense>
+                            <Footer />
+                        </QueryContextProvider>
+                    </CreateRecipeProvider>
+                </LoginVisibleProvider>
+            </AuthProvider>
+        </ScrollProvider>
     )
 }
 

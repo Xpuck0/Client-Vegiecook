@@ -4,17 +4,27 @@ import { useAuthVisible } from '../../contexts/LoginContext';
 import Login from '../../Components/Login/Login';
 import Register from '../../Components/Register/Register';
 import { logout, register } from '../../Middleware/auth'
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import AuthContext from '../../contexts/AuthProvider';
 import Path from '../../paths';
 import { QueryContext } from '../../contexts/QueryContext';
+import { useScroll } from '../../contexts/ScrollContext';
 
 
-export default function Header({disabled=true}) {
+export default function Header({ disabled = true }) {
     const { isLoginVisible, isRegisterVisible, toggleLoginVisible, toggleRegisterVisible } = useAuthVisible();
     const { username, isAuthenticated, setAuth } = useContext(AuthContext);
-    const {query, setQuery} = useContext(QueryContext);
+
+    const [isFocused, setIsFocused] = useState(false);
+    const { query, setQuery } = useContext(QueryContext);
+    const inputRef = useRef(null);
     const [hide, setHide] = useState(true)
+    // const recipesSectionRef = document.getElementById('recipes-section'); // Ensure your recipes section has this ID
+    const { recipesSectionRef } = useScroll();
+
+    useEffect(() => {
+        console.log(recipesSectionRef.current);
+    }, [recipesSectionRef]);
 
 
     useEffect(() => {
@@ -30,6 +40,25 @@ export default function Header({disabled=true}) {
 
         return () => document.removeEventListener('click', closeDropdown);
     }, [hide]);
+
+    const handleInputFocus = () => {
+        setIsFocused(true);
+        console.log(recipesSectionRef)
+        if (recipesSectionRef.current) {
+            recipesSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const handleInputBlur = () => {
+        setIsFocused(false);
+    };
+
+    const handleInputChange = (e) => {
+        setQuery(e.target.value);
+        if (recipesSectionRef.current) {
+            recipesSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     const toggleDropdown = () => {
         setHide(!hide);
@@ -59,7 +88,23 @@ export default function Header({disabled=true}) {
                     </ul>
                 </nav>
 
-                <input className={style.query} type="text" placeholder="Search..." value={query} onChange={e => setQuery(e.target.value)} />
+                {/* <input
+                    className={style.query}
+                    type="text"
+                    placeholder="Search..."
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                /> */}
+                <input
+                    ref={inputRef}
+                    className={`${style.query} ${isFocused || query ? `${style.input_focused} ${style.fixed_input}` : ''}`}
+                    type="text"
+                    placeholder="Search..."
+                    value={query}
+                    onChange={handleInputChange}
+                    onFocus={handleInputFocus}
+                    onBlur={handleInputBlur}
+                />
                 {!isAuthenticated ?
                     <div className={style.buttonWrapper}>
                         <button onClick={toggleLoginVisible} className={style.login}>Log in</button>

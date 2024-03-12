@@ -5,7 +5,9 @@ const Path = {
     Diet: '/diets',
     Category: '/categories',
     Leaderboards: '/leaderboards', 
-
+    Forum: '/forum',
+    ForumQuestions: '/forum/questions',
+    ForumAnswers: '/forum/asnwers',
 }
 
 export default Path;
