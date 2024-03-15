@@ -11,10 +11,6 @@ export default function RecipesContainer({ recipes_, diets = [], categories = []
     const { query } = useContext(QueryContext)
     const { recipesSectionRef } = useScroll();
 
-    useEffect(() => {
-        console.log(recipesSectionRef.current);
-    }, [recipesSectionRef.current]);
-
 
     useEffect(() => {
         (!recipes_ || !recipes_.length) && (async () => {

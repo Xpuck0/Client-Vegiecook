@@ -24,6 +24,7 @@ import ObscureDietPage from './Pages/ObscureDietPage/ObscureDietPage';
 import LeaderboardsPage from './Pages/LeaderboardsPage/LeaderboardsPage';
 import { ScrollProvider } from './contexts/ScrollContext';
 import ForumPage from './Pages/ForumPage/ForumPage';
+import ForumDetailPage from './Pages/ForumDetailPage/ForumDetailPage';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
                                     <Route path={`${Path.Category}/:id`} element={<CategoryPage />} />
                                     <Route path={Path.Leaderboards} element={<LeaderboardsPage />} />
                                     <Route path={Path.Forum} element={<ForumPage />} />
+                                    <Route path={`${Path.ForumQuestions}/:id`} element={<ForumDetailPage />} />
                                 </Routes>
                             </Suspense>
                             <Footer />

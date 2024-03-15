@@ -5,10 +5,21 @@
 
 .list {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 2em;
 }
 
 .list li {
     list-style-type: none;
+}
+
+.header {
+    font-size: 24px;
+    letter-spacing: 1.3px;
+    color: #303030;
+    font-family: Roboto;
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 1em;
 }

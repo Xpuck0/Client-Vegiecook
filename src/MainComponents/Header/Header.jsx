@@ -19,12 +19,7 @@ export default function Header({ disabled = true }) {
     const { query, setQuery } = useContext(QueryContext);
     const inputRef = useRef(null);
     const [hide, setHide] = useState(true)
-    // const recipesSectionRef = document.getElementById('recipes-section'); // Ensure your recipes section has this ID
     const { recipesSectionRef } = useScroll();
-
-    useEffect(() => {
-        console.log(recipesSectionRef.current);
-    }, [recipesSectionRef]);
 
 
     useEffect(() => {
@@ -43,7 +38,6 @@ export default function Header({ disabled = true }) {
 
     const handleInputFocus = () => {
         setIsFocused(true);
-        console.log(recipesSectionRef)
         if (recipesSectionRef.current) {
             recipesSectionRef.current.scrollIntoView({ behavior: 'smooth' });
         }

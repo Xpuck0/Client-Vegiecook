@@ -31,19 +31,16 @@ export default function DietSelect({
 
     useEffect(() => {
         (async () => {
-            const data = await getDiets(); 
-            console.log(data);
+            const data = await getDiets();
             if (data.success) {
                 const formattedOptions = data.data.map(category => ({
                     value: category.id,
                     label: category.name
                 }));
                 setOptions(formattedOptions);
-            } else {
-                console.log(data.error);
             }
         })();
-    }, []); 
+    }, []);
 
     const handleChange = (selectedOptions) => {
         const selectedDiets = selectedOptions ? selectedOptions.map(option => ({
@@ -53,7 +50,7 @@ export default function DietSelect({
         setDiets(selectedDiets);
     };
 
-    const value = diets.map(diet=> ({
+    const value = diets.map(diet => ({
         value: diet.id,
         label: diet.name
     }));

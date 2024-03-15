@@ -1,0 +1,20 @@
+.wrapper {
+    max-width: 800px;
+    text-align: left;
+    background-color: rgb(242, 255, 240);
+    padding: 2em 3em;;
+}
+
+.username {
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-size: 22px;
+}
+
+.time {
+    margin-bottom: .4em;
+}
+
+.text {
+    font-size: 22px;
+}

@@ -91,6 +91,10 @@ export function calcMinutes(hours, minutes) {
   return hours * 60 + minutes;
 }
 
+export function trimTimestampAfterDot(timestamp) {
+  return timestamp.split('.')[0];
+}
+
 // Test cases
 // console.log(convertSecondsToDuration(900)); // Output: 15 MINUTES
 // console.log(convertSecondsToDuration(3600)); // Output: 1 HOUR

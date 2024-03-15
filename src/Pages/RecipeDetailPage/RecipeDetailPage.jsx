@@ -85,13 +85,11 @@ export default function RecipeDetailPage() {
             setCommentRating(0);
 
             if (commentRating && commentRating != 0) {
-                console.log(recipeData.rating)
                 const update = await patchRecipe(recipeData.id, {
                     votes: recipeData.votes + 1,
                     rating: parseFloat(((Number(recipeData.votes) * Number(recipeData.rating) + Number(commentRating)) / (recipeData.votes + 1)).toFixed(1))
                 })
                 if (update.success) {
-                    console.log(update.data)
                     setRecipeData(prevState => ({
                         ...prevState,
                         rating: update.data.rating,

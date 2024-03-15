@@ -20,7 +20,6 @@ export default function CategorySelect({
     useEffect(() => {
         (async () => {
             const data = await getCategories(); 
-            console.log(data);
             if (data.success) {
                 const formattedOptions = data.data.map(category => ({
                     value: category.id,

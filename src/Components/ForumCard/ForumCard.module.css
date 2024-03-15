@@ -4,13 +4,25 @@
     font-size: 22px;
     text-align: left;
     position: relative;
+    background-color: #f9fae7;
+    padding: 20px 40px;
+    border: 2px solid #f9fae7;
+}
+
+.wrapper:hover {
+    border: 2px solid #f7ff65;
 }
 
 .card { 
     display: flex;
     flex-direction: column;
-
     flex: 1 1 auto;;
+    word-break: break-word;
+}
+
+.card.answer {
+    background-color: #fffbeb;
+    padding: 1.5em;
 }
 
 .card h3 {
@@ -44,7 +56,8 @@
     display: flex;
     align-items: center;
 
-    border: 2px solid grey;
+    margin-top: 1em;
+    /* border: 2px solid grey; */
     width: fit-content;
     border-radius: .4em;
 }
@@ -64,6 +77,10 @@
     align-items: center;
 }
 
+.heart:hover {
+    cursor: pointer;
+}
+
 .hrtCnt {
     height: 50px;
     object-fit: scale-down;
@@ -77,4 +94,48 @@
 .word {
     padding-top: 4px;
     margin-left: .6em;
+}
+
+.permButtons,
+.editButtons {
+    display: flex;
+    gap: 2em;
+}
+
+.permButtons button {
+    color: rgb(151, 0, 151)
+}
+
+.permButtons button,
+.editButtons button {
+    font-family: "Handelson W00 Three", serif;
+    background-color: unset;
+    margin-top: .5em;
+    font-size: 24px;
+    letter-spacing: 1.1px;
+}
+
+.editButtons button:nth-child(1n) {
+    color: #318d07;
+}
+
+.permButtons button:hover,
+.editButtons button:hover {
+    text-decoration: underline;
+}
+.editForm {
+    display: flex;
+    flex-direction: column;
+    gap: .2em;
+}
+
+.editForm textarea {
+    height: 160px;
+    resize: vertical;
+    font-size: .8em;
+    padding: .4em 1em;
+    border: 1px solid #FAF5E7;
+    min-height: 1.6em;
+    outline: none;
+    transition: border .2s;
 }

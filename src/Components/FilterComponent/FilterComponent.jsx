@@ -13,8 +13,6 @@ export default function FilterComponent({
 
     const searchHandler = (e) => {
         e.preventDefault();
-        console.log(diets);
-        console.log(categories);
     }
 
     return (
@@ -26,7 +24,6 @@ export default function FilterComponent({
                     categories={categories}
                     setCategories={setCategories}
                 />
-                {console.log(categories)}
             </div>
             <div className={style.recipeFilter}>
                 <h2>By Diet</h2>
@@ -34,7 +31,6 @@ export default function FilterComponent({
                     diets={diets}
                     setDiets={setDiets}
                 />
-                {console.log(diets)}
             </div>
         </div>
     )

@@ -1,30 +1,43 @@
 .wrapper {
     min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.h1 {
-    text-align: center;
-}
-
-.commentCreate {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.answers {
+    /* border: 1px solid red; */
+    border-left: 2px solid #ffecc9;
+    margin-top: 1em;
+    padding-left: 300px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3.5em;
+}
+
+.list li {
+    list-style-type: none;
+}
+
+
+.answerCreate {
+    width: 700px;
+    margin-left: auto;
     text-align: left;
-    font-size: 22px;
-    background-color: #e7fae7;
+    font-size: 20px;
+    background-color: #fde5c7;
     padding: 40px 50px;
 
     display: flex;
     flex-direction: column;
     gap: 1em;
-    margin-top: 4em;
-    margin-bottom: 3em;
+    margin-block: 4em;
 }
 
 
-.commentCreate h2 {
+.answerCreate h2 {
     font-family: Roboto;
     font-weight: 500;
     font-size: 40px;
@@ -32,25 +45,24 @@
     margin-bottom: 20px;
 }
 
-.commentWrite {
-    height: 100px;
+.answerWrite {
+    height: 160px;
     resize: vertical;
     font-size: .8em;
     padding: .8em 1em;
-    border: 1px solid #e7fae8;
+    border: 1px solid #FAF5E7;
     min-height: 1.3em;
     outline: none;
     transition: border .2s;
 }
 
-.commentWrite:hover,
-.commentWrite:focus {
+.answerWrite:hover,
+.answerWrite:focus {
     /* outline: none; */
-    border: 1px solid #65ff7f;
+    border: 1px solid #ffd665;
 }
 
 .post {
-
     width: fit-content;
     padding: .3em .6em;
     text-transform: uppercase;
@@ -58,7 +70,7 @@
     font-family: Roboto;
     font-size: .9em;
     font-weight: 500;
-    background-color: #24a310;
+    background-color: #f28320;
     color: white;
 }
 
@@ -69,5 +81,5 @@
 
 .error {
     font-size: 18px;
-    color:rgb(168, 0, 0)
+    color: rgb(169, 2, 2)
 }
