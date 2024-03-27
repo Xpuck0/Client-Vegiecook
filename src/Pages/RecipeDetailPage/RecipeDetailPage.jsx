@@ -1,7 +1,7 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import style from './RecipeDetailPage.module.css';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { getRecipe, patchRecipe } from '../../Middleware/recipes';
+import { deleteRecipe, getRecipe, patchRecipe } from '../../Middleware/recipes';
 import CommentNode from '../../Components/CommentNode/CommentNode';
 import { CircularProgress, Rating } from '@mui/material';
 import { postComment } from '../../Middleware/comments';
@@ -50,6 +50,7 @@ export default function RecipeDetailPage() {
 
     const [error, setError] = useState('');
 
+    const nav = useNavigate();
     const ref = useRef(null);
 
     useEffect(() => {
@@ -131,6 +132,13 @@ export default function RecipeDetailPage() {
 
     }
 
+    const deleteHandler = async () => {
+        if (isAuthenticated) {
+            const res = await deleteRecipe(id);
+            nav(Path.Home)
+        }
+    }
+
 
     return (
         <div className={style.pageWrapper}>
@@ -140,7 +148,7 @@ export default function RecipeDetailPage() {
 
                         <div className={style.textHeading}>
                             <h1 className={style.title}>{recipeData.title}</h1>
-                            <p className={style.author}><Link>{recipeData.user.username}</Link></p>
+                            <p className={style.author}><Link to={`${Path.UserRecipes}/${recipeData.user.id}`}>{recipeData.user.username}</Link></p>
                             <div className={style.ratingCont}>
                                 {/* TODO STARS */}
                                 <Rating
@@ -159,6 +167,7 @@ export default function RecipeDetailPage() {
                                 <Link className={style.print}><div className={style.iconContOne}></div>print</Link>
                                 <button className={style.save}><div className={style.iconContTwo}></div>save</button>
                             </div>
+                            {isAuthenticated && userId == recipeData.user.id && <div onClick={deleteHandler} className={style.deleteButton}>Delete</div>}
                         </div>
                         <div className={style.imageHeader}>
                             <img src={`http://localhost:8000/${recipeData.image}`} alt="" />
@@ -192,7 +201,7 @@ export default function RecipeDetailPage() {
                         <li className={style.li}>
                             <span className={style.heading}>diet</span>
                             {recipeData.diet ? (
-                                <Link to={`${Path.Diet}/${recipeData.diet.id}`}><span className={style.value}>{recipeData.diet.name}</span></Link>
+                                <Link className={style.dietLink} to={`${Path.Diet}/${recipeData.diet.id}`}><span className={style.value}>{recipeData.diet.name}</span></Link>
                             ) : (
                                 <span className={style.value}>Loading diet information...</span>
                             )}

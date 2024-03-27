@@ -1,3 +1,13 @@
+.title,
+.description,
+.instruction,
+.ingredient {
+    word-break: break-word;
+}
+
+.description {
+    margin-top: 1em;
+}
 
 .pageWrapper {
     min-height: 100vh;
@@ -32,11 +42,11 @@
     display: flex;
 }
 
-.ratingCont{
+.ratingCont {
     display: flex;
     align-items: center;
     /* flex-direction: column; */
-    color:#3d3d3d;
+    color: #3d3d3d;
     font-weight: 600;
     gap: 2em;
     font-size: 15px;
@@ -59,9 +69,10 @@
 
 .author a {
     font-size: 20px;
+    max-width: 20ch;
     color: palevioletred;
+    word-break: break-word;
     text-transform: capitalize;
-
 }
 
 .buttons {
@@ -307,7 +318,7 @@
 
 .post[disabled] {
     opacity: .5;
-    cursor:not-allowed;
+    cursor: not-allowed;
 }
 
 .commentsInfo {
@@ -319,7 +330,7 @@
 
 .comments {
     display: flex;
-    flex-direction: column-reverse; 
+    flex-direction: column-reverse;
     gap: 1.3em;
     margin-bottom: 18em;
 }
@@ -337,4 +348,11 @@
 .loading {
     min-height: 100vh;
 
+}
+
+.dietLink {
+    color: rgb(187, 0, 187);
+}
+.dietLink:hover {
+    color: rgb(139, 1, 139);
 }

@@ -25,6 +25,8 @@ import LeaderboardsPage from './Pages/LeaderboardsPage/LeaderboardsPage';
 import { ScrollProvider } from './contexts/ScrollContext';
 import ForumPage from './Pages/ForumPage/ForumPage';
 import ForumDetailPage from './Pages/ForumDetailPage/ForumDetailPage';
+import GuestAuthGuard from './Guards/AuthGuard';
+import UserPage from './Pages/UserPage/UserPage';
 
 function App() {
 
@@ -40,7 +42,6 @@ function App() {
                                     <Route path={Path.Home} element={<HomePage />} />
                                     <Route path={Path.Recipes} element={<AllRecipesPage />} />
                                     <Route path={`${Path.Recipes}/:id`} element={<RecipeDetailPage />} />
-                                    <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
                                     <Route path={Path.Diet} element={<ObscureDietPage />} />
                                     <Route path={`${Path.Diet}/:id`} element={<DietPage />} />
                                     <Route path={Path.Category} element={<ObscureCategoryPage />} />
@@ -48,6 +49,10 @@ function App() {
                                     <Route path={Path.Leaderboards} element={<LeaderboardsPage />} />
                                     <Route path={Path.Forum} element={<ForumPage />} />
                                     <Route path={`${Path.ForumQuestions}/:id`} element={<ForumDetailPage />} />
+                                    <Route path={`${Path.UserRecipes}/:id`} element={<UserPage />}/>
+                                    <Route element={<GuestAuthGuard />}>
+                                        <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
+                                    </Route>
                                 </Routes>
                             </Suspense>
                             <Footer />

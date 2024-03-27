@@ -1,0 +1,19 @@
+.wrapper {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.username {
+    text-transform: capitalize;
+    margin-bottom: 1em;
+}
+
+.par {
+    margin-top: 2em;;
+
+    font-size: 26px;
+    color: black;
+    border-block: 1px solid black;
+    /* background-color: rgb(128, 217, 131); */
+}

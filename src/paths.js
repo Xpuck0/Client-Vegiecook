@@ -8,6 +8,7 @@ const Path = {
     Forum: '/forum',
     ForumQuestions: '/forum/questions',
     ForumAnswers: '/forum/asnwers',
+    UserRecipes: '/recipes/byuser'
 }
 
 export default Path;

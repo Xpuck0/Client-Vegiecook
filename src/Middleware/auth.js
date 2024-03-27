@@ -42,7 +42,7 @@ export async function login(username, password) {
 
 
         const data = await getUser()
-        localStorage.setItem('auth', {...data})
+        localStorage.setItem('auth', { ...data })
         return { success: true, data: data };
 
     } catch (error) {
@@ -81,7 +81,7 @@ export async function getUser() {
             },
             credentials: 'include'
         })
-    
+
         if (!response.ok) {
             const errorData = await response.json(); // Assuming the error response is in JSON format
             throw new Error(errorData.username || 'Failed to get user.');
@@ -94,9 +94,24 @@ export async function getUser() {
     }
 }
 
+export async function getUserById(id) {
+    try {
+        const response = await fetch(`${API_URL}${id}`);
 
+        if (!response.ok) {
+            throw new Error("Could not fetch user");
+        }
 
+        const data = await response.json();
 
+        if (!data || typeof data !== 'object') {
+            throw new Error("Invalid data format received");
+        }
 
+        return { success: true, data: data };
+    } catch (error) {
+        console.error(error); 
+        return { success: false, error: error.message };
+    }
+}
 
-// console.log(getToken('admin', '2503'))

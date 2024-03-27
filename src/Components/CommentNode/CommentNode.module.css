@@ -10,6 +10,7 @@
     text-align: left;
     margin-top: .4em;
     margin-bottom: .7em;
+    word-break: break-word;
 }
 
 .comment h3 {

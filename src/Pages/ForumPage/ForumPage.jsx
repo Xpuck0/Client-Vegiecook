@@ -3,6 +3,7 @@ import style from './ForumPage.module.css';
 import getQuestions, { forumCreateQuestion } from '../../Middleware/forum';
 import QuestionsList from '../../Components/QuestionsList/QuestionsList';
 import AuthContext from '../../contexts/AuthProvider';
+import { QueryContext } from '../../contexts/QueryContext';
 
 
 export default function ForumPage() {
@@ -10,14 +11,26 @@ export default function ForumPage() {
     const [question, setQuestion] = useState('');
     const [error, setError] = useState('')
 
+    const [isLoading, setIsLoading] = useState(true);
+
+    const { query } = useContext(QueryContext);
+
     const { userId, isAuthenticated } = useContext(AuthContext);
 
     useEffect(() => {
         (async () => {
+            setIsLoading(true);
             const res = await getQuestions();
             setQuestions(await res.data)
+            setIsLoading(false);
         })()
     }, [])
+
+
+    const filterQuestions = (query) => {
+        return questions.filter(el => el.text.includes(query.trim()))
+    }
+
 
     const questionSubmitHandler = async (e) => {
         e.preventDefault();
@@ -52,7 +65,8 @@ export default function ForumPage() {
                 {!isAuthenticated && <p>You must be authenticated to comment :)</p>}
                 <button type='submit' disabled={!isAuthenticated} className={style.post}>post comment</button>
             </form>
-            <QuestionsList questions={questions} />
+
+            <QuestionsList questions={filterQuestions(query)} isLoading={isLoading} s />
         </div>
     )
 }

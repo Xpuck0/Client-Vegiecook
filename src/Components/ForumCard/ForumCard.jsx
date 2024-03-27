@@ -136,7 +136,7 @@ export default function ForumCard({ c, detail = false, answer = false, deleteHan
                 ) : (
                     <p className={style.text}>{card.text}</p>
                 )}
-                {detail && isAuthenticated && card.user.id == userId && !editing && (
+                {(answer || detail) && isAuthenticated && card.user.id == userId && !editing && (
                     <div className={style.permButtons}>
                         <button onClick={editHandler}>Edit</button>
                         <button onClick={(e) => deleteHandler(e, answer ? 'answers' : 'questions', card.id)}>Delete</button>

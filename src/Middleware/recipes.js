@@ -20,6 +20,35 @@ export async function getAllRecipes() {
     }
 }
 
+export async function getRecipeByUser(id) {
+    try {
+        const response = await fetch(`${baseUrl}/byuser/${id}`);
+        if (!response.ok) {
+            throw new Error("Failed to fetch user recipes.")
+        }
+
+        const data = await response.json();
+        return { success: true, data: data }
+    } catch (error) {
+        return { success: false, error: error.message }
+    }
+}
+
+
+export async function deleteRecipe(id) {
+    try {
+        const res = await fetch(baseUrl + '/' + id, {
+            method: 'DELETE'
+        })
+        if (!res.ok) {
+            throw new Error("Couldn't delete recipe!")
+        }
+        return res;
+    } catch (error) {
+        console.error(error.message)
+    }
+}
+
 export async function getSortedRecipes() {
     try {
         const response = await fetch(baseUrl + '/sorted');

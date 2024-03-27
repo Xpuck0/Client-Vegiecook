@@ -83,3 +83,20 @@
     font-size: 18px;
     color: rgb(169, 2, 2)
 }
+
+.backWrapper {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.back {
+    color:rgb(205, 0, 205);
+    font-size: 22px;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 3em;
+}
+
+.back:hover {
+    text-decoration: underline;
+}

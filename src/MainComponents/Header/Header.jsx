@@ -13,7 +13,7 @@ import { useScroll } from '../../contexts/ScrollContext';
 
 export default function Header({ disabled = true }) {
     const { isLoginVisible, isRegisterVisible, toggleLoginVisible, toggleRegisterVisible } = useAuthVisible();
-    const { username, isAuthenticated, setAuth } = useContext(AuthContext);
+    const { userId, username, isAuthenticated, setAuth } = useContext(AuthContext);
 
     const [isFocused, setIsFocused] = useState(false);
     const { query, setQuery } = useContext(QueryContext);
@@ -112,10 +112,7 @@ export default function Header({ disabled = true }) {
                                 <ul className={style.father}>
                                     <li onClick={toggleDropdown} className={`${style.heading} ${!hide && style.selected}`}>{username}</li>
                                     <div className={`${style.dropdown} ${hide ? style.hide : style.show}`}>
-                                        <li><Link>My Page</Link></li>
-                                        <div className={style.verticalBreak}></div>
-                                        <li><Link>Favorites</Link></li>
-                                        <li><Link>My Recipes</Link></li>
+                                        <li><Link to={`${Path.UserRecipes}/${userId}`}>My Recipes</Link></li>
                                         <li><Link to={Path.CreateRecipe}>Create</Link></li>
                                         <div className={style.verticalBreak}></div>
                                         <li onClick={logoutHandler}><Link>Logout</Link></li>

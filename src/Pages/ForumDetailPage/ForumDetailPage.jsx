@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import style from './ForumDetailPage.module.css';
 import { useContext, useEffect, useState } from 'react';
 import { forumCreateAnswer, forumDelete, getQuestion } from '../../Middleware/forum';
@@ -7,6 +7,7 @@ import { FidgetSpinner } from 'react-loader-spinner';
 import { QueryContext } from '../../contexts/QueryContext';
 import AuthContext from '../../contexts/AuthProvider';
 import Path from '../../paths';
+import { useScroll } from '../../contexts/ScrollContext';
 
 export default function ForumDetailPage() {
     const [thread, setThread] = useState({});
@@ -17,6 +18,8 @@ export default function ForumDetailPage() {
     const { isAuthenticated, userId } = useContext(AuthContext);
 
     const { id } = useParams();
+
+    const { recipesSectionRef } = useScroll();
 
     const nav = useNavigate();
 
@@ -88,6 +91,9 @@ export default function ForumDetailPage() {
     
     return (
         <div className={style.wrapper}>
+            <div className={style.backWrapper}>
+                <Link className={style.back} to={Path.Forum}>Back to forum index</Link>
+            </div>
             <div className={style.question}>
                 <ForumCard deleteHandler={deleteHandler} c={thread} detail={true} />
             </div>
@@ -101,7 +107,7 @@ export default function ForumDetailPage() {
             </form>
 
             {!!thread.answers.length && (
-                <div className={style.answers}>
+                <div className={style.answers} ref={recipesSectionRef}>
                     <ul className={style.list}>
                         {!!thread.answers.length && thread.answers.filter(filterAnswers).map(el => (
                             <li key={el.id}><ForumCard c={el} deleteHandler={deleteHandler} answer={true} /></li>

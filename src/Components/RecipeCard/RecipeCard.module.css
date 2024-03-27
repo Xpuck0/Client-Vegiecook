@@ -38,8 +38,9 @@
 }
 
 .name {
+    word-break: break-word;
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: capitalize;
     color: black;
     text-wrap: wrap;

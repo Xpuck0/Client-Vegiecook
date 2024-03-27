@@ -92,7 +92,7 @@ export default function SecondStage({
 
         if (newMinutes >= 60) {
             minsSetter(0);
-            hoursSetter((old) => old + 1);
+            hoursSetter((old) => Number(old) + 1);
         }
     };
 
