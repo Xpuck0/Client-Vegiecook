@@ -89,6 +89,19 @@ export default function FourthStage({
 
     };
 
+    const removeIngredient = (ingredientName) => {
+        setIngredients(prev => {
+            const updated = { ...prev };
+            delete updated[ingredientName];
+            return updated;
+        });
+    };
+
+    // Function to remove an instruction
+    const removeInstruction = (index) => {
+        setInstructions(prev => prev.filter((_, i) => i !== index));
+    };
+
 
     return (
         <div className={style.wrapper}>
@@ -107,15 +120,15 @@ export default function FourthStage({
                     </div>
                     <button className={style.addButton} onClick={ingredientAddHandler}>Add</button>
                 </div>
-                {Object.keys(ingredients).length > 0 && (
-                    <ul className={style.ingredientList}>
-                        {Object.entries(ingredients).map(([name, quantity], index) => (
-                            <li key={index}>
-                                <span className={style.key}>{name}</span> - <span className={style.value}>{quantity}</span>
-                            </li>
-                        ))}
-                    </ul>
-                )}
+                <ul className={style.ingredientList}>
+                    {Object.entries(ingredients).map(([name, quantity], index) => (
+                        <li className={`${style.li} fade-out`} key={name}>
+                            <span>{name} - {quantity}</span>
+                            <button className={style.removeButton} onClick={() => removeIngredient(name)}>Remove</button>
+                        </li>
+                    ))}
+                </ul>
+
                 {ingrErr && <p className={style.error}>{ingrErr}</p>}
             </div>
             <div className={style.instructions}>
@@ -127,20 +140,19 @@ export default function FourthStage({
                     </div>
                     <button className={style.addButton} onClick={instructionAddHandler}>Add</button>
                 </div>
-                {instructions.length > 0 && (
-                    <ol className={style.instructionList}>
-                        {instructions.map((instruct, index) => (
-                            <li key={instruct + index}>
-                                <span className={style.lispan}>{instruct}</span>
-                            </li>
-                        ))}
-                    </ol>
-                )}
+                <ol className={style.instructionList}>
+                    {instructions.map((instruction, index) => (
+                        <li className={`${style.li} fade-out`} key={instruction + index}>
+                            <span>{instruction}</span>
+                            <button className={style.removeButton} onClick={() => removeInstruction(index)}>Remove</button>
+                        </li>
+                    ))}
+                </ol>
                 {instrErr && <p className={style.error}>{instrErr}</p>}
             </div>
             <div>
                 <h2 className={style.title}>Serving Size</h2>
-                <input type="number" min={1} max={50} value={servingSize} onChange={e => setServingSize(e.target.value)}/>
+                <input type="number" min={1} max={50} value={servingSize} onChange={e => setServingSize(e.target.value)} />
             </div>
             <div className={style.buttons}>
                 <button onClick={goBack} className={style.backButton}>

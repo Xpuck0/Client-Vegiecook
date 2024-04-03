@@ -6,7 +6,7 @@ import { QueryContext } from "../../contexts/QueryContext";
 import { FidgetSpinner } from "react-loader-spinner";
 import { useScroll } from "../../contexts/ScrollContext";
 
-export default function RecipesContainer({ recipes_, diets = [], categories = [] }) {
+export default function RecipesContainer({ recipes_, diets = [], categories = [], count = -1 }) {
     const [recipes, setRecipes] = useState(recipes_ || []);
     const { query } = useContext(QueryContext)
     const { recipesSectionRef } = useScroll();
@@ -36,6 +36,13 @@ export default function RecipesContainer({ recipes_, diets = [], categories = []
         return queryMatch && dietMatch && categoryMatch;
     };
 
+    function getFirstNElements(array, n) {
+        if (!n) {
+            return array;
+        }
+        return array.slice(0, n);
+    }
+
     // const filteredRecipes = useMemo(() => recipes.filter(filterRecipes), [recipes, query, diets, categories]);
     if (!recipes.length) {
         return (
@@ -49,7 +56,7 @@ export default function RecipesContainer({ recipes_, diets = [], categories = []
     return (
         <div className={style.recipesContainer} ref={recipesSectionRef}>
             <ul className={style.ul}>
-                {recipes.filter(filterRecipes).map((r, i) => (
+                {getFirstNElements(recipes, count).filter(filterRecipes).map((r, i) => (
                     <li key={`${r.title}-${r.id}`}><RecipeCard r={r} /></li>
                 ))}
             </ul>

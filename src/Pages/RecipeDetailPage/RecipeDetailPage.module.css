@@ -356,3 +356,13 @@
 .dietLink:hover {
     color: rgb(139, 1, 139);
 }
+
+.deleteButton {
+    color: red;
+    font-style:italic;
+}
+
+.deleteButton:hover {
+    cursor: pointer;
+    color:rgb(196, 0, 0)
+}

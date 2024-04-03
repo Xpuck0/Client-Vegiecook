@@ -36,12 +36,17 @@
 }
 
 .input {
-    width: 3em;
+    width: 6em;
+    padding: .4em .8em;
 }
 
 .hours,
 .minutes {
     display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    font-size: 22px;
     justify-content: space-between;
     width: 7em;
     margin: 0 auto;

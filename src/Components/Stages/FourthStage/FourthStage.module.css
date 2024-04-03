@@ -109,10 +109,52 @@
     transform: scale(1.05);
 }
 
+
+
 .ingredientList,
 .instructionList {
-    padding: 1em;
+    padding-block: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
     text-align: left;
+}
+
+.instructionList {
+    flex-direction: column;;
+}
+
+.li {
+    list-style-type: none;
+    width: 100%;
+    background-color: #fffce5;
+    padding: .4em .6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.3s ease-out;
+}
+
+.li span {
+    text-wrap: nowrap;
+}
+
+.removeButton {
+    cursor: pointer;
+    background-color: #ff686b;
+    border: none;
+    color: white;
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.removeButton:hover {
+    background-color: #db575a;
+}
+
+.fade-out {
+    opacity: 0;
 }
 
 .err {

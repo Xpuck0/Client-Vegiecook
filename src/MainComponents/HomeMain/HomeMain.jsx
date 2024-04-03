@@ -12,7 +12,7 @@ export default function HomeMain() {
 
     return (
         <main className={style.main}>
-            <RecipesContainer diets={diets} categories={categories}/>
+            <RecipesContainer diets={diets} categories={categories} count={4}/>
             <SignupReminder />
             <About />
         </main>
