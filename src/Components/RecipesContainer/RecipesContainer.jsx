@@ -36,6 +36,10 @@ export default function RecipesContainer({ recipes_, diets = [], categories = []
         return queryMatch && dietMatch && categoryMatch;
     };
 
+    const sortRecipies = (a, b) => {
+        return a.created_at > b.created_at;
+    }
+
     function getFirstNElements(array, n) {
         if (!n) {
             return array;
@@ -56,7 +60,7 @@ export default function RecipesContainer({ recipes_, diets = [], categories = []
     return (
         <div className={style.recipesContainer} ref={recipesSectionRef}>
             <ul className={style.ul}>
-                {getFirstNElements(recipes, count).filter(filterRecipes).map((r, i) => (
+                {getFirstNElements(recipes, count).filter(filterRecipes).sort(sortRecipies).map((r, i) => (
                     <li key={`${r.title}-${r.id}`}><RecipeCard r={r} /></li>
                 ))}
             </ul>

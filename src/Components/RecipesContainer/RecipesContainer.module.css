@@ -9,5 +9,18 @@
 }
 
 .ul li {
-    flex: 0 0 23.93%;
+    flex: 0 0 23.90%;
+}
+
+@media (max-width: 1120px) {
+    /* .ul li {
+        flex: 0 0 46.93%;
+    } */
+
+    .ul {
+        flex-direction: column;
+        margin-inline: 1em;
+        width: fit-content;
+        margin: 0 auto;
+    }
 }

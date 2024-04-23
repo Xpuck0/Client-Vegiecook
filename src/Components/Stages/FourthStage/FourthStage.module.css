@@ -136,7 +136,8 @@
 }
 
 .li span {
-    text-wrap: nowrap;
+    text-wrap: wrap;
+    width: 85%;
 }
 
 .removeButton {

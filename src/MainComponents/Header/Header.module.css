@@ -199,6 +199,7 @@
     font-weight: 380;
     max-width: 8em;
     color: #e600ff;
+    padding-right: .5em;
 
     font-weight: 500;
     transition: background-color .2s, color .2s, box-shadow .2s;
@@ -245,4 +246,134 @@
     margin: 0 auto;
     transform: translateX(50%);
     z-index: 10;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 1224px) {
+
+    .header {
+        background-color: #d5ffcd;
+        border-radius: .3em;
+        margin-inline: 1em;
+    }
+
+    .header .logo {
+        display: none;
+    }
+
+    .header .mobile {
+        display: inline;
+    }
+    .wrapper {
+        font-size: 18px;
+        /* Adjust font size for smaller screens */
+    }
+
+    .header .nav {
+        margin-left: 1em
+    }
+
+    .header .logo,
+    .header .nav,
+    .header .buttonWrapper,
+    .header .query {
+        flex: 1 0 auto;
+        /* Make all elements full width on smaller screens */
+    }
+
+
+    .dropdown {
+        display: flex;
+        /* Show dropdown on smaller screens */
+        flex-direction: column;
+    }
+
+
+    .buttonWrapper>* {
+        transform: scale(1);
+        /* Disable hover scale effect on mobile */
+    }
+    .input-focused,
+    .query:focus {
+        width: 90vw;
+        transform: unset;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 860px) {
+    .header .ul li {
+        font-size: 16px;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        gap: .6em;
+    }
+
+    .header {
+        margin-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .nav {
+        order: 2;
+    }
+
+    .query {
+        order: 1;
+        margin-top: 1em;
+        width: 90%;
+    }
+
+    .header .buttonWrapper {
+        display: none;
+    }
+
+    .header .query {
+        margin-right: 1em;
+    }
+    .input-focused,
+    .query:focus {
+        width: 90vw;
+        transform: unset;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 540px) {
+    .wrapper {
+        flex-direction: column;
+        gap: .6em;
+        padding-top: .5em;
+    }
+
+    .nav {
+        order: 2;
+    }
+
+    .query {
+        order: 1;
+        width: 90%;
+    }
+
+    .input-focused,
+    .query:focus {
+        width: 90vw;
+        transform: unset;
+        z-index: 10;
+    }
+
+    .header .ul li {
+        font-size: 14px;
+        /* Smaller font size for very small devices */
+    }
+
+    .header .logo {
+        font-size: 28px;
+        /* Smaller logo font size for very small devices */
+    }
 }

@@ -239,7 +239,7 @@
     width: 900px;
     display: flex;
     flex-wrap: wrap;
-    gap: 3em;
+    gap: 1em;
     font-size: 20px;
     justify-content: center;
     margin-top: 1em;

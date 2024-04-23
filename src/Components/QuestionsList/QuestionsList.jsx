@@ -2,7 +2,7 @@ import { FidgetSpinner } from 'react-loader-spinner';
 import style from './QuestionsList.module.css';
 import ForumCard from '../ForumCard/ForumCard';
 import { useScroll } from '../../contexts/ScrollContext';
-// u  are gae
+
 
 export default function QuestionsList({ questions, isLoading }) {
     const { recipesSectionRef } = useScroll();

@@ -76,19 +76,13 @@ export default function Header({ disabled = true }) {
 
                 <nav className={style.nav}>
                     <ul className={style.ul}>
+                        <li className={style.mobile}><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/recipes/'}>Recipes</Link></li>
                         <li><Link to={'/leaderboards/'}>Leaderboards</Link></li>
                         <li><Link to={'/forum/'}>Forum</Link></li>
                     </ul>
                 </nav>
 
-                {/* <input
-                    className={style.query}
-                    type="text"
-                    placeholder="Search..."
-                    value={query}
-                    onChange={e => setQuery(e.target.value)}
-                /> */}
                 <input
                     ref={inputRef}
                     className={`${style.query} ${isFocused || query ? `${style.input_focused} ${style.fixed_input}` : ''}`}

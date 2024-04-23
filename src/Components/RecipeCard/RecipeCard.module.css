@@ -1,5 +1,5 @@
 .recipeCard {
-    flex: 1 0 20%;
+    flex: 0 0 20%;
     display: block;
     max-width: 300px;
     padding-bottom: 1em;
@@ -49,3 +49,4 @@
 .rating {
     margin-top: .8em;
 }
+

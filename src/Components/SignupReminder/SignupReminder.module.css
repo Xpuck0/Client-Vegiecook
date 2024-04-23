@@ -60,3 +60,9 @@
 .broccoli:hover {
     transform: scale(1.05) rotate(-70deg);
 }
+
+@media (max-width: 860px) {
+    .wrapper {
+        display: none;
+    }
+}

@@ -34,7 +34,7 @@ export default function ForumCard({ c, detail = false, answer = false, deleteHan
             }
         };
         setImgSrc(getImageSrc());
-        (async (id, answer) => {
+        isAuthenticated && (async (id, answer) => {
             let res;
             if (answer) {
                 res = await checkIfUserLiked(userId, null, card.id);

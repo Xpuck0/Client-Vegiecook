@@ -84,3 +84,21 @@
     right: 15em;
     transform: rotate(40deg)
 }
+
+@media (max-width: 1600px){
+    .fruits {
+        display: none;
+    }
+}
+
+@media (max-width: 770px) {
+    .footer .navigation {
+        flex-direction: column;
+        gap: 0em;
+        margin-bottom: 3em;
+    }
+    .footer .info {
+        flex-direction: column;
+        gap: 0;
+    }
+}
